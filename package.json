@@ -1,0 +1,32 @@
+{
+  "//1": "This file is equlent to Maven POM.xml file where you define all dependencies and classes to run",
+  "//2": "In order to active this file:",
+  "//3": "1. Open cmd terminal",
+  "//4": "2. Go to the directory where the project is located (C:\\Users\\roi\\eclipse-protractor-workspace\\ProtractorToutorial)",
+  "//5": "3. In order to create package.json file prompt 'npm init -f' in comand line in project directory.",
+  "//6": "4. Refresh the project do package.json file will appear in the project's file (white n sorounded with red image)",
+  "//7": "5. Edit package.json with all dependencies and scripts that are needed.",
+  "//8": "6. Prompt 'npm install' in command line this command will search in the dependencies and download all files needed according to",
+  "//9": "The definitions here for example we download 'protractor' v5.4.1 and placed it in 'node_modules' directory under main project's directory.",
+  "//10": "The dependencies names are taken from the oficial npm web site you must put the correct name and version.",
+  "//11": "https://www.npmjs.com/package/protractor",
+  "//12": "7. After that in cmd enter 'npm run start' this will run webdriver-update and webdriver-start commands that will install webdriver",
+  "//13": "And open the Webdriver server for protractor. (This basically should be run only one time)",
+  "//14": "8. In cmd (different one) enter 'npm run protractor' this will actually run the configuration file where the relevant spec (js file to run) appears.",
+  "//15": "9. Suites can be run by calling 'npm run smokeSuite/regressionSuite' where the definition of the suites is written in configuration.js file ",
+  
+  "name": "ProtractorToutorial",
+  "dependencies": {
+    "protractor": "^5.4.1",
+    "jasmine-data-provider": "^2.2.0",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  },
+  "scripts": {
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver-start": "./node_modules/.bin/webdriver-manager start",
+    "protractor": "./node_modules/.bin/protractor configuration.js",
+    "start": "npm run webdriver-update &&npm run webdriver-start",
+    "smokeSuite":"./node_modules/.bin/protractor configuration.js --suite smoke",
+    "regressionSuite":"./node_modules/.bin/protractor configuration.js --suite regression"
+  }
+}
